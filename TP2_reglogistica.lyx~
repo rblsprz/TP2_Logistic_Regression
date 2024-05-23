@@ -1,0 +1,293 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage{palatino}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language spanish
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style swiss
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Trabajo práctico 2: Regresión Logística
+\end_layout
+
+\begin_layout Author
+Ph.
+ D.
+ Saúl Calderón Ramírez 
+\begin_inset Newline newline
+\end_inset
+
+Instituto Tecnológico de Costa Rica, 
+\begin_inset Newline newline
+\end_inset
+
+Escuela de Ingeniería en Computación
+\begin_inset Newline newline
+\end_inset
+
+PAttern Recongition and MAchine Learning Group (PARMA-Group)
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Fecha de entrega:
+\series default
+ Lunes 3 de Junio
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Entrega
+\series default
+: Un archivo .zip con el código fuente LaTeX o Lyx, el pdf, y un notebook
+ Jupyter, debidamente documentado, con una función definida por ejercicio.
+ A través del TEC-digital.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Modo de trabajo
+\series default
+: Grupos de 3 personas.
+\end_layout
+
+\begin_layout Abstract
+En el presente trabajo práctico se introduce la implementación de la selección
+ de características y la regresión logistica para fines de clasificación.
+ 
+\end_layout
+
+\begin_layout Section
+Regresión Logística con datos sintéticos (60 puntos)
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+(40 puntos)
+\series default
+ Algoritmo de Regresión logística: Implemente el algoritmo de regresión
+ logística rescindiendo al máximo de estructuras de tipo 
+\emph on
+for, 
+\emph default
+usando entonces operaciones matriciales
+\emph on
+.
+\end_layout
+
+\begin_layout Enumerate
+Para cada clasificador:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+
+\series bold
+(20 puntos)
+\series default
+ Realice 2 pruebas con distintas distancias de separación entre las muestras
+ de las clases, con una prueba linealmente separable, y otra no, y documente
+ (en una tabla) el error medio absoluto (MAE), el cual se define como sigue:
+ 
+\begin_inset Formula 
+\[
+e_{\textrm{MAE}}=\frac{1}{N}\sum_{i=1}^{N}\left|t_{i}-\widetilde{t}_{i}\right|.
+\]
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Defina el conjunto de muestras de entrenamiento como el 70% de las muestras
+ aleatoriamente seleccionadas, y el resto utilicelas como muestras de prueba.
+\end_layout
+
+\begin_layout Enumerate
+Documente la cantidad de iteraciones usadas, y grafique la función del error
+ durante el entrenamiento, para una corrida de ambos casos (datos linealmente
+ separables y no linealmente separables).
+ Explique los resultados.
+\end_layout
+
+\begin_layout Enumerate
+Grafique con un diagrama de dispersión los datos generados, junto con la
+ superficie de decisión construida por el modelo en cada caso (definida
+ según los pesos ).
+ 
+\series bold
+Explique los pasos para graficar la superficie de decisión
+\series default
+.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\series bold
+(40 puntos)
+\series default
+Reporte los resultados promedio para 10 corridas, con los datos linealmente
+ separables y no linealmente separables generados de forma aleatoria en
+ cada una, en clasificar tales muestras de prueba.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Reporte el promedio del MAE y su desviación estándar para las 10 corridas,
+ en una tabla.
+ Comente los resultados.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Section
+Regresión Logística para clasificación de ataques (40 puntos)
+\end_layout
+
+\begin_layout Standard
+Basado en el articulo "
+\emph on
+UNSW-NB15: A Comprehensive Data set for Network Intrusion Detection systems
+\emph default
+" utilice su implementación del algoritmo de regresión logística para detectar
+ los ataques, usando el dataset publicado en tal articulo:
+\end_layout
+
+\begin_layout Enumerate
+Implemente usando las funciones básicas de pytorch las métricas de aciertos,
+ falsos positivos, falsos negativos, verdaderos positivos, verdaderos negativos,
+ precision, 
+\emph on
+recall 
+\emph default
+y el F1-score.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Diseñe al menos dos pruebas unitarias donde compare los resultados con las
+ métricas implementadas en el paquete 
+\emph on
+sklearn.metrics.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Implemente el preprocesamiento de los datos de la siguiente forma: calcule
+ la media y desviación de estándar de la partición de datos de entrenamiento,
+ y extraiga la media de los datos para luego dividir los mismos por la desviació
+n estándar.
+\end_layout
+
+\begin_layout Enumerate
+Realice 30 particiones distintas de datos de entrenamiento y prueba, usando
+ la función 
+\emph on
+train_test_split 
+\emph default
+de 
+\emph on
+sklearn.
+
+\emph default
+ Muestre los resultados al entrenar el modelo de regresión logística construido
+ en los puntos anteriores, en una tabla, junto con la media y desviación
+ estándar.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Ejecute el entrenamiento usando el preprocesamiento del punto anterior y
+ sin usarlo.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Compare y comente los resultados.
+ 
+\end_layout
+
+\end_deeper
+\end_body
+\end_document
